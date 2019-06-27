@@ -29,14 +29,16 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <p>Link Api RajaApi = {this.state.urlApiWilayah}</p>
-        <p>Token API RajaApi untuk hari ini = {this.state.token}</p>
         <Route path='/' component={Home} exact />
         <Route path='/parkir' component={ParkirPage} exact />
         <Route 
           path='/wilayah'  
           render={(props) => <Wilayah {...props} urlApiWilayah={this.state.urlApiWilayah}/>}
           exact />
+        <div className='border-top border-bottom py-3'>
+          <p>Link Api RajaApi = {this.state.urlApiWilayah}</p>
+          <p>Token API RajaApi untuk hari ini = {this.state.token}</p>
+        </div>
       </div>
     );
   }
